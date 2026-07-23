@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikkah Invitation | Muhammed & Khadeeja</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="With the blessings of Allah, we joyfully invite you to the Nikkah Ceremony & Reception of Muhammed & Khadeeja on July 30, 2026 at Udumbunthala Juma Masjid & Naseemas Ramanthali.">
+  <meta property="og:title" content="Nikkah Invitation | Muhammed & Khadeeja">
+  <meta property="og:description" content="Two souls, two hearts, united by Allah's will. Nikkah at 4:30 PM (Udumbunthala Juma Masjid) & Feast at 7:00 PM (Naseemas, Ramanthali).">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Alex+Brush&family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Floating Gold Sparkles & Petals -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- HTML5 Audio Element with Autoplay Enabled -->
+  <audio id="bg-audio" loop autoplay preload="auto">
+    <source src="assets/wedding_nasheed.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Floating Audio Controls -->
+  <div class="audio-control-wrapper">
+    <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle Wedding Nasheed Music">
+      <i class="fa-solid fa-compact-disc gold-disc-spin"></i>
+      <span class="sound-wave">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="audio-text">Play Wedding Nasheed</span>
+    </button>
+  </div>
+
+  <!-- Header Navigation -->
+  <nav class="nav-bar">
+    <div class="nav-brand">M & K</div>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#bismillah">Invitation</a></li>
+      <li><a href="#couple">The Couple</a></li>
+      <li><a href="#countdown">Countdown</a></li>
+      <li><a href="#schedule">Program</a></li>
+      <li><a href="#venue">Venues</a></li>
+      <li><a href="#rsvp" class="nav-rsvp-btn">RSVP</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+
+    <!-- HERO / CARD SECTION -->
+    <section id="bismillah" class="invitation-card-container">
+      
+      <!-- Hanging Lanterns Animation Elements -->
+      <div class="lantern lantern-left">
+        <div class="lantern-glow"></div>
+      </div>
+      <div class="lantern lantern-right">
+        <div class="lantern-glow"></div>
+      </div>
+
+      <!-- Islamic Arch Outer Frame -->
+      <div class="arch-card">
+        
+        <!-- Floral Top Corners Decoration -->
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner top-right"></div>
+        
+        <div class="arch-inner-content">
+          
+          <!-- Calligraphy Header -->
+          <div class="bismillah-wrapper">
+            <h1 class="arabic-bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+            <p class="bismillah-translation">
+              IN THE NAME OF ALLAH, THE MOST MERCIFUL, THE MOST BENEFICENT
+            </p>
+          </div>
+
+          <div class="ornament-divider">
+            <span class="line"></span>
+            <i class="fa-solid fa-kaaba gold-icon"></i>
+            <span class="line"></span>
+          </div>
+
+          <!-- Opening Invitation Text -->
+          <p class="invitation-subtext">
+            WITH THE BLESSINGS OF ALLAH<br>
+            WE JOYFULLY INVITE YOU TO THE
+          </p>
+
+          <!-- Main Ceremony Heading -->
+          <div class="ceremony-title">
+            <h2>Nikkah</h2>
+            <span class="ceremony-subtitle">CEREMONY & RECEPTION</span>
+          </div>
+
+          <!-- Couple Names Section -->
+          <div class="couple-names-section">
+            <div class="person groom">
+              <h3 class="name">Muhammed</h3>
+              <span class="role">GROOM</span>
+            </div>
+            
+            <div class="ampersand-wrapper">
+              <span class="ampersand">&</span>
+            </div>
+
+            <div class="person bride">
+              <h3 class="name">Khadeeja</h3>
+              <span class="role">BRIDE</span>
+            </div>
+          </div>
+
+          <div class="gold-flourish">✦ ━━━━ ✦ ━━━━ ✦</div>
+
+          <!-- Heartfelt Quote -->
+          <div class="quote-box">
+            <p class="quote-text">
+              “TWO SOULS, TWO HEARTS, UNITED BY ALLAH’S WILL, TOGETHER IN FAITH, FOREVER IN LOVE.”
+            </p>
+          </div>
+
+          <!-- Date & Venue Highlights Grid -->
+          <div class="event-highlights-grid">
+            <div class="highlight-item">
+              <div class="icon-bubble">
+                <i class="fa-regular fa-calendar-check"></i>
+              </div>
+              <div class="highlight-info">
+                <span class="label">DATE</span>
+                <strong class="value">JULY 30, 2026</strong>
+                <span class="sub-value">THURSDAY</span>
+              </div>
+            </div>
+
+            <div class="v-divider"></div>
+
+            <div class="highlight-item">
+              <div class="icon-bubble">
+                <i class="fa-solid fa-ring"></i>
+              </div>
+              <div class="highlight-info">
+                <span class="label">NIKKAH (4:30 PM - AFTER ASR)</span>
+                <strong class="value">UDUMBUNTHALA</strong>
+                <span class="sub-value">JUMA MASJID</span>
+              </div>
+            </div>
+
+            <div class="v-divider"></div>
+
+            <div class="highlight-item">
+              <div class="icon-bubble">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <div class="highlight-info">
+                <span class="label">FEAST (7:00 PM - AFTER MAGHRIB)</span>
+                <strong class="value">NASEEMAS</strong>
+                <span class="sub-value">RAMANTHALI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Invitation Note -->
+          <p class="card-footer-note">
+            WE LOOK FORWARD TO YOUR PRESENCE AND PRAY FOR YOUR BLESSINGS.
+            <span class="heart-symbol">♥</span>
+          </p>
+
+        </div> <!-- End Arch Inner Content -->
+
+        <!-- Floral Bottom Corners -->
+        <div class="floral-corner bottom-left"></div>
+        <div class="floral-corner bottom-right"></div>
+      </div>
+    </section>
+
+    <!-- COUPLE PORTRAIT & STORY SECTION -->
+    <section id="couple" class="section-container couple-section">
+      <div class="section-header">
+        <span class="section-tag">THE HAPPY COUPLE</span>
+        <h2>Muhammed & Khadeeja</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="couple-card-wrapper">
+        <div class="couple-image-frame">
+          <img src="assets/couple.jpg" alt="Muhammed and Khadeeja" class="couple-img" id="couple-photo">
+          <div class="frame-border"></div>
+        </div>
+        <div class="couple-details">
+          <div class="story-card">
+            <h3><i class="fa-solid fa-heart gold-icon"></i> A Journey Blessed by Faith</h3>
+            <p>
+              "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy." 
+              <br><small>— Surah Ar-Rum [30:21]</small>
+            </p>
+            <p>
+              We request your gracious presence and heartfelt prayers as we celebrate our Nikkah ceremony and grand reception with family, friends, and well-wishers.
+            </p>
+
+            <div class="action-buttons-group">
+              <button id="add-to-calendar-btn" class="btn btn-gold">
+                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+              </button>
+              <button id="share-whatsapp-btn" class="btn btn-outline-gold">
+                <i class="fa-brands fa-whatsapp"></i> Share Invitation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN TIMER SECTION -->
+    <section id="countdown" class="section-container countdown-section">
+      <div class="section-header">
+        <span class="section-tag">THE BIG DAY IS APPROACHING</span>
+        <h2>Countdown to Nikkah</h2>
+        <p class="countdown-target-date">July 30, 2026 • 4:30 PM (After Asr Prayer)</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="countdown-grid">
+        <div class="time-card">
+          <div class="time-box"><span id="cd-days">00</span></div>
+          <span class="time-label">DAYS</span>
+        </div>
+        <div class="time-card">
+          <div class="time-box"><span id="cd-hours">00</span></div>
+          <span class="time-label">HOURS</span>
+        </div>
+        <div class="time-card">
+          <div class="time-box"><span id="cd-minutes">00</span></div>
+          <span class="time-label">MINUTES</span>
+        </div>
+        <div class="time-card">
+          <div class="time-box"><span id="cd-seconds">00</span></div>
+          <span class="time-label">SECONDS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM SCHEDULE SECTION -->
+    <section id="schedule" class="section-container schedule-section">
+      <div class="section-header">
+        <span class="section-tag">EVENT TIMELINE</span>
+        <h2>Program Schedule</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-user-group"></i></div>
+          <div class="timeline-content">
+            <span class="time">04:00 PM</span>
+            <h3>Guest Gathering & Asr Prayer</h3>
+            <p>Welcoming guests and family members at Udumbunthala Juma Masjid for Asr prayer.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item highlight">
+          <div class="timeline-icon"><i class="fa-solid fa-ring"></i></div>
+          <div class="timeline-content">
+            <span class="time">04:30 PM (After Asr)</span>
+            <h3>Solemn Nikkah Ceremony</h3>
+            <p>Sacred Nikkah ceremony and solemnization at <strong>Udumbunthala Juma Masjid</strong>.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-hands-praying"></i></div>
+          <div class="timeline-content">
+            <span class="time">06:45 PM</span>
+            <h3>Maghrib Prayer</h3>
+            <p>Evening congregational prayers and du'a for the newly married couple.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item highlight">
+          <div class="timeline-icon"><i class="fa-solid fa-utensils"></i></div>
+          <div class="timeline-content">
+            <span class="time">07:00 PM (After Maghrib)</span>
+            <h3>Grand Feast & Reception</h3>
+            <p>Sumptuous wedding feast and celebratory reception at <strong>Naseemas, Ramanthali</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUES & MAP SECTION -->
+    <section id="venue" class="section-container venue-section">
+      <div class="section-header">
+        <span class="section-tag">LOCATION & DIRECTIONS</span>
+        <h2>Event Venues</h2>
+        <p class="venue-address">Nikkah at Udumbunthala Juma Masjid & Feast at Naseemas, Ramanthali</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="venues-grid">
+        <!-- Venue Card 1: Nikkah -->
+        <div class="venue-card">
+          <div class="venue-card-header">
+            <i class="fa-solid fa-mosque gold-icon"></i>
+            <div>
+              <h3>Udumbunthala Juma Masjid</h3>
+              <span class="venue-badge">NIKKAH CEREMONY • 4:30 PM</span>
+            </div>
+          </div>
+          <p><i class="fa-solid fa-location-dot"></i> Udumbunthala, Kasaragod District, Kerala</p>
+          <p><i class="fa-regular fa-clock"></i> Nikkah Time: 4:30 PM (After Asr Prayer)</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Udumbunthala+Juma+Masjid" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
+            <i class="fa-solid fa-diamond-turn-right"></i> Maps Direction (Masjid)
+          </a>
+        </div>
+
+        <!-- Venue Card 2: Feast -->
+        <div class="venue-card">
+          <div class="venue-card-header">
+            <i class="fa-solid fa-utensils gold-icon"></i>
+            <div>
+              <h3>Naseemas, Ramanthali</h3>
+              <span class="venue-badge">GRAND FEAST & RECEPTION • 7:00 PM</span>
+            </div>
+          </div>
+          <p><i class="fa-solid fa-location-dot"></i> Ramanthali, Kannur / Kasaragod Border, Kerala</p>
+          <p><i class="fa-regular fa-clock"></i> Feast Time: 7:00 PM (After Maghrib Prayer)</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Naseemas+Ramanthali" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
+            <i class="fa-solid fa-diamond-turn-right"></i> Maps Direction (Naseemas)
+          </a>
+        </div>
+      </div>
+
+      <div class="map-wrapper" style="margin-top: 30px;">
+        <div id="map-container" class="map-box"></div>
+      </div>
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp" class="section-container rsvp-section">
+      <div class="section-header">
+        <span class="section-tag">ATTENDANCE CONFIRMATION</span>
+        <h2>RSVP & Blessings</h2>
+        <p>Please let us know if you will be joining our special celebration.</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="rsvp-card">
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="rsvp-name"><i class="fa-regular fa-user"></i> Full Name</label>
+              <input type="text" id="rsvp-name" required placeholder="e.g., Ahmed & Family">
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-phone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+              <input type="tel" id="rsvp-phone" required placeholder="e.g., +91 98765 43210">
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-guests"><i class="fa-solid fa-users"></i> Number of Guests</label>
+              <select id="rsvp-guests" required>
+                <option value="1">1 Person</option>
+                <option value="2">2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons</option>
+                <option value="5+">5+ Family Members</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-attendance"><i class="fa-regular fa-circle-check"></i> Will You Attend?</label>
+              <select id="rsvp-attendance" required>
+                <option value="nikkah_and_feast">Attending Both Nikkah & Feast</option>
+                <option value="nikkah_only">Attending Nikkah Only (4:30 PM)</option>
+                <option value="feast_only">Attending Grand Feast Only (7:00 PM)</option>
+                <option value="decline">Regretfully Decline / Sending Prayers</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="rsvp-message"><i class="fa-regular fa-comment-dots"></i> Message / Du'a for the Couple</label>
+            <textarea id="rsvp-message" rows="3" placeholder="Write your prayers and best wishes here..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-large">
+            <i class="fa-solid fa-paper-plane"></i> Submit RSVP & Blessings
+          </button>
+        </form>
+
+        <div id="rsvp-success-message" class="rsvp-success hidden">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>JazakAllah Khair!</h3>
+          <p>Thank you for confirming your presence. We look forward to celebrating with you!</p>
+          <button id="reset-rsvp-btn" class="btn btn-outline-gold">Send Another Response</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-names">Muhammed & Khadeeja</h3>
+      <p class="footer-bismillah">بَارَكَ ٱللَّٰهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+      <p class="footer-translation">"May Allah bless you and shower His blessings upon you and join you together in goodness."</p>
+      <div class="gold-flourish">✦ Nikkah Ceremony & Reception • July 30, 2026 ✦</div>
+      
+      <!-- Creator Credit & Phone Number -->
+      <div class="creator-credits">
+        <p>Crafted with Love & Faith</p>
+        <p class="creator-contact">
+          <i class="fa-solid fa-wand-magic-sparkles gold-icon"></i> 
+          Wedding Invitation Making by <strong>Sharmina</strong> 
+          • <a href="tel:+919539322329" class="phone-link"><i class="fa-solid fa-phone"></i> +91 9539322329</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- Canvas Confetti for RSVP -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
