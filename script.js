@@ -1,13 +1,12 @@
 /* ==========================================================================
    MUHAMMED & KHADEEJA NIKKAH INVITATION - INTERACTIVE SCRIPT
+   Updated with exact Google Maps coordinates for Naseemas Ramanthali
    ========================================================================== */
 
-// Prevent browser from restoring scroll position to footer on refresh
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
-// Force page to start at the top hero section on launch
 window.scrollTo(0, 0);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,9 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. LEAFLET DUAL VENUE MAPS
+  // 3. LEAFLET DUAL VENUE MAPS (UDUMBUNTHALA JUMA MASJID & EXACT NASEEMAS RAMANTHALI)
   const masjidCoords = [12.1643, 75.1481];
-  const naseemasCoords = [12.1385, 75.1852];
+  // Exact user provided coordinates for Naseemas Ramanthali: 12°04'26.3"N 75°11'25.6"E (12.0739708, 75.1904373)
+  const naseemasCoords = [12.0739708, 75.1904373];
+  const naseemasGmapsUrl = "https://www.google.com/maps/place/12%C2%B004'26.3%22N+75%C2%B011'25.6%22E/@12.0739708,75.1904373,17z";
+
   const mapContainer = document.getElementById('map-container');
 
   if (mapContainer) {
@@ -117,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="text-align: center; padding: 5px;">
               <strong style="color: #9E791E; font-size: 14px;">Naseemas, Ramanthali</strong><br>
               <span style="font-size: 12px; color: #555;">Grand Feast & Reception • 7:00 PM (After Maghrib)</span><br>
-              <a href="https://www.google.com/maps/search/?api=1&query=Naseemas+Ramanthali" target="_blank" style="color: #C59B27; font-weight: bold; text-decoration: underline; font-size: 12px; display: inline-block; margin-top: 5px;">Get Directions</a>
+              <a href="${naseemasGmapsUrl}" target="_blank" style="color: #C59B27; font-weight: bold; text-decoration: underline; font-size: 12px; display: inline-block; margin-top: 5px;">Get Directions</a>
             </div>
           `);
 
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <i class="fa-solid fa-map-location-dot" style="font-size:3rem; margin-bottom:10px;"></i>
           <h3>Nikkah: Udumbunthala Juma Masjid (4:30 PM)</h3>
           <h3>Feast: Naseemas, Ramanthali (7:00 PM)</h3>
-          <a href="https://www.google.com/maps/search/?api=1&query=Naseemas+Ramanthali" target="_blank" class="btn btn-gold" style="margin-top:10px;">Open Maps</a>
+          <a href="${naseemasGmapsUrl}" target="_blank" class="btn btn-gold" style="margin-top:10px;">Open Maps</a>
         </div>
       `;
     }
@@ -211,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `🕌 *Nikkah Ceremony:* 4:30 PM (After Asr Prayer)\n` +
         `📍 *Nikkah Venue:* Udumbunthala Juma Masjid\n\n` +
         `🍽 *Grand Feast & Reception:* 7:00 PM (After Maghrib Prayer)\n` +
-        `📍 *Feast Venue:* Naseemas, Ramanthali\n\n` +
+        `📍 *Feast Venue:* Naseemas, Ramanthali (${naseemasGmapsUrl})\n\n` +
         `🎶 *Music:* Wedding Nasheed (Muhammad Al Muqit)\n\n` +
         `We look forward to your presence & prayers!`
       );
@@ -219,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. AUDIO PLAYBACK (STAYS AT TOP, NO AUTO SCROLLING)
+  // 7. AUDIO PLAYBACK
   const audioBtn = document.getElementById('audio-toggle-btn');
   const bgAudio = document.getElementById('bg-audio');
 
@@ -239,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bgAudio.play().then(() => {
       updateAudioButtonState(true);
     }).catch(err => {
-      // Browser autoplay policy requires 1 gesture (click or tap)
       const enableOnFirstTouch = () => {
         bgAudio.play().then(() => {
           updateAudioButtonState(true);
@@ -258,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startAudioPlayback();
 
-  // Manual Toggle Button
   if (audioBtn && bgAudio) {
     audioBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -348,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Ensure top position after all resources load
 window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
